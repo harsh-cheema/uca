@@ -17,29 +17,33 @@ Given n = 6, k = 2, encrypted_file = [1 , 3, 5, 2 , 5 ,4], and
 binary = [1,1, 0, 1, 0, 0].
 
 Answer is 15*/
-
+#define max(a,b) ((a>b)?a:b)
 #include <stdio.h>
-#include <cmath>
+#include <math.h>
 
 int maximum(int file[],int status[],int n,int k){
     int already_en=0;
-    for(int i=0;i<n;i++){
+    int i;
+    for(i=0;i<n;i++){
         if(status[i]==1) already_en+=file[i];
     }
     
     int subarray=0;
-    for(int i=0;i<k;i++){
+    for(i=0;i<k;i++){
         if(status[i]==0) subarray+=file[i];
     }
 
-    int max=subarray;
-    for(int i=k;i<n;i++){
+    int max_sum=subarray;
+    for(i=k;i<n;i++){
         if(status[i-k]==0) subarray-=file[i-k];
         if(status[i]==0) subarray+=file[i];
-        max=Math.max(max,subarray);
+        max_sum=max(max_sum,subarray);
     }
-    return max+subarray;
+    return max_sum+already_en;
 }
 int main(){
-
+     int n = 6, k = 2;
+     int file[] = {1 , 3, 5, 2 , 5 ,4};
+     int status[]= {1,1, 0, 1, 0, 0};
+     printf("%d\n",maximum(file,status,n,k));
 }

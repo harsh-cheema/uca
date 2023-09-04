@@ -1,35 +1,6 @@
-// import java.util.*;
-
-// public class Interview{
-    
-    /*public static boolean check_palindrome(String str){
-        String st="";
-        str=str.toLowerCase();
-        for(int i=0;i<str.length();i++){
-            if((str.charAt(i)>='a' && str.charAt(i)<='z') || (str.charAt(i)>='0' && str.charAt(i)<='1'))
-            st+=str.charAt(i);
-        }
-        System.out.println(st);
-        int l=0;
-        int h=st.length()-1;
-        while(l<=h){
-            if(st.charAt(l)!=st.charAt(h)) return false;
-            l++;
-            h--;
-        }
-        return true;
-    }
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        String str=sc.nextLine();
-        System.out.println(check_palindrome(str));
-    }*/
-import java.sql.SQLOutput;
 import java.util.*;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-class Main {
+public class Longest_Palindrome{
 
 
     // ab$cba  -> "ab$cba"
@@ -75,8 +46,6 @@ class Main {
 
         }
 
-
-
         return answer;
     }
 
@@ -91,7 +60,8 @@ class Main {
                 maxLength = R - L + 1;
                 answer = new ArrayList<>();
                 answer.add(str.substring(L, R + 1));
-            } else if ((R - L  + 1) == maxLength) {
+            } 
+            else if ((R - L  + 1) == maxLength) {
                 answer.add(str.substring(L, R + 1));
             }
 
@@ -146,3 +116,5 @@ class Main {
         System.out.println(longestPallindromeSubstring("@3$AA!!AA@@@")); // "AA"  A ->  ! ! ! "A"
     }
 }
+
+
