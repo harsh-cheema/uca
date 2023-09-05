@@ -19,7 +19,8 @@ void selection_sort(int arr[],int n){
 int main(){
     int arr[]={8,1,6,2,5,3};
     selection_sort(arr,6);
-    for(int i=0;i<6;i++){
+    int i;
+    for(i=0;i<6;i++){
         printf("%d ",arr[i]);
     }
     printf("\n");
