@@ -99,7 +99,6 @@ struct Node* merge(struct Node* a, struct Node* b) {
 
 }
 
-// Function to perform merge sort on a linked list
 struct Node* mergeSort(struct Node* head) {
     if (head == NULL || head->next == NULL) {
         return head;
